@@ -659,9 +659,11 @@ footer { background: var(--charcoal); color: var(--muted); }
 
 /* ── SCROLL PROGRESS BAR ── */
 #progress-bar {
-  position: fixed; top: 0; left: 0; height: 2px; width: 0%;
-  background: var(--accent); z-index: 200;
-  transition: width .1s linear; pointer-events: none;
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: linear-gradient(to right, #C4A882, #9B8A72, #BBA88A);
+  box-shadow: 0 0 10px rgba(155,138,114,.65), 0 0 4px rgba(155,138,114,.4);
+  z-index: 200;
+  transition: width .08s linear; pointer-events: none;
 }
 
 /* ── FLOATING ACCESSIBILITY ── */
@@ -781,6 +783,14 @@ footer { box-shadow: inset 0 14px 48px rgba(0,0,0,.3); }
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ── FAQ OPEN STATE ── */
+.faq-item.open {
+  border-inline-start: 2px solid rgba(155,138,114,.6);
+  background: linear-gradient(to left, rgba(155,138,114,.05), transparent 65%);
+}
+.faq-item.open .faq-btn span { color: #1E1C18; font-weight: 600; }
+.faq-item.open .faq-icon { color: var(--accent); }
 </style>
 <script type="application/ld+json">
 {
