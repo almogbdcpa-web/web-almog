@@ -77,7 +77,6 @@ export default function About() {
             className="relative aspect-[3/4] lg:aspect-auto lg:h-[620px]"
           >
             <div className="absolute inset-0 bg-[#EDE8E0]" />
-            <div className="absolute inset-[14px] border border-[#DDD8D0] z-10 pointer-events-none" />
             <div className="relative h-full w-full">
               <Image
                 src="/almog.png"
@@ -87,6 +86,14 @@ export default function About() {
                 sizes="(max-width: 1024px) 100vw, 45vw"
               />
             </div>
+            {/* Grain */}
+            <div aria-hidden className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/feTurbulence%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E\")", backgroundSize: '200px 200px', opacity: 0.06 }} />
+            {/* Vignette */}
+            <div aria-hidden className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(30,28,24,.18) 0%, transparent 28%), linear-gradient(to top, rgba(30,28,24,.14) 0%, transparent 28%)' }} />
+            {/* Corner marks */}
+            {(['top-[14px] start-[14px] border-t border-s', 'top-[14px] end-[14px] border-t border-e', 'bottom-[14px] start-[14px] border-b border-s', 'bottom-[14px] end-[14px] border-b border-e'] as const).map((pos, i) => (
+              <div key={i} aria-hidden className={`absolute w-[22px] h-[22px] border-[#C2B9AF] pointer-events-none z-10 ${pos}`} />
+            ))}
           </motion.div>
 
         </div>

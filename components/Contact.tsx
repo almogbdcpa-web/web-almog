@@ -59,9 +59,11 @@ export default function Contact() {
                 href="tel:+972547312262"
                 className="flex items-center gap-4 group"
               >
-                <div className="w-10 h-10 flex items-center justify-center border border-[#DDD8D0]
-                                group-hover:border-[#9B8A72] transition-colors duration-300">
-                  <Phone size={15} strokeWidth={1.3} className="text-[#9B8A72]" />
+                <div className="w-[42px] h-[42px] rounded-[10px] bg-[#1E1C18] flex items-center justify-center flex-shrink-0
+                                shadow-[0_4px_12px_rgba(30,28,24,.22)]
+                                group-hover:bg-[#282420] group-hover:shadow-[0_6px_18px_rgba(155,138,114,.28)]
+                                transition-all duration-300">
+                  <Phone size={15} strokeWidth={1.3} className="text-[#D4B896]" />
                 </div>
                 <div>
                   <span className="text-[10px] tracking-widest text-[#ABA49A] uppercase block mb-0.5">טלפון</span>
@@ -75,9 +77,11 @@ export default function Contact() {
                 href="mailto:almog@abd-cpa.co.il"
                 className="flex items-center gap-4 group"
               >
-                <div className="w-10 h-10 flex items-center justify-center border border-[#DDD8D0]
-                                group-hover:border-[#9B8A72] transition-colors duration-300">
-                  <Mail size={15} strokeWidth={1.3} className="text-[#9B8A72]" />
+                <div className="w-[42px] h-[42px] rounded-[10px] bg-[#1E1C18] flex items-center justify-center flex-shrink-0
+                                shadow-[0_4px_12px_rgba(30,28,24,.22)]
+                                group-hover:bg-[#282420] group-hover:shadow-[0_6px_18px_rgba(155,138,114,.28)]
+                                transition-all duration-300">
+                  <Mail size={15} strokeWidth={1.3} className="text-[#D4B896]" />
                 </div>
                 <div>
                   <span className="text-[10px] tracking-widest text-[#ABA49A] uppercase block mb-0.5">דוא&quot;ל</span>

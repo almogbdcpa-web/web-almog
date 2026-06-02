@@ -34,4 +34,15 @@
   .label-sm {
     @apply text-[11px] tracking-[0.22em] uppercase font-medium;
   }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C4A882 0%, #9B8A72 45%, #7A6D5E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-inset {
+    box-shadow: inset 0 14px 40px rgba(30,28,24,.055);
+  }
 }

@@ -30,7 +30,7 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section id="why" className="bg-[#F5F1EC]">
+    <section id="why" className="bg-[#F5F1EC] section-inset">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-24 md:py-32">
 
         {/* Header */}
@@ -70,9 +70,11 @@ export default function WhyUs() {
                             ${i % 2 === 0 ? 'md:border-e md:border-e-[#DDD8D0]' : ''}`}
               >
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="w-9 h-9 flex items-center justify-center border border-[#DDD8D0]
-                                  group-hover:border-[#9B8A72] transition-colors duration-300">
-                    <Icon size={16} strokeWidth={1.3} className="text-[#9B8A72]" />
+                  <div className="w-[42px] h-[42px] rounded-[10px] bg-[#1E1C18] flex items-center justify-center flex-shrink-0
+                                  shadow-[0_4px_12px_rgba(30,28,24,.22)]
+                                  group-hover:bg-[#282420] group-hover:shadow-[0_6px_18px_rgba(155,138,114,.28)]
+                                  transition-all duration-300">
+                    <Icon size={16} strokeWidth={1.3} className="text-[#D4B896]" />
                   </div>
                   <h3 className="font-semibold text-[#1E1C18] text-[1rem]">{item.title}</h3>
                 </div>

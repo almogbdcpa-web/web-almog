@@ -159,7 +159,7 @@ function GroupHeader({ badge, titleDark, titleAccent, delay = 0 }: {
         style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.4rem)' }}
       >
         {titleDark}{' '}
-        <span className="text-[#9B8A72]">{titleAccent}</span>
+        <span className="text-gradient-gold">{titleAccent}</span>
       </h2>
     </motion.div>
   )
