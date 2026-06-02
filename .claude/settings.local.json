@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\אתר אלמוג\" -File -Force | ForEach-Object { [PSCustomObject]@{Name=$_.Name; Size=$_.Length; Modified=$_.LastWriteTime} })",
+      "PowerShell(\\(Get-ChildItem \"c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\אתר אלמוג\" -Force\\).Count; Get-ChildItem \"c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\אתר אלמוג\" -Directory)",
+      "Bash(npm --version)",
+      "WebFetch(domain:finka.co.il)",
+      "Bash(npm run *)",
+      "Bash(ls -la \"c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\\\\\" | grep -v node_modules)",
+      "Read(//c/Users/almog/OneDrive/Desktop/**)",
+      "PowerShell(ls \"c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\\\\\" | Where-Object { $_.Name -ne \"node_modules\" })",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\\\\app\" -Directory | ForEach-Object { Write-Host $_.Name })",
+      "Bash(powershell -Command \"\\(Get-Content 'c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\\\\services\\\\hashavat-mas.html' | Measure-Object -Line\\).Lines\")",
+      "PowerShell($file = \"c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\\\\services\\\\hashavat-mas.html\"; $content = Get-Content $file -Raw; $opens = \\([regex]::Matches\\($content, '<div'\\)\\).Count; $closes = \\([regex]::Matches\\($content, '</div>'\\)\\).Count; $lines = \\(Get-Content $file\\).Count; \"Divs: $opens opens / $closes closes | Lines: $lines\")",
+      "PowerShell($hm = \"c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\\\\services\\\\hashavat-mas.html\"; $idx = \"c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\\\\index.html\"; $kz = \"c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\\\\services\\\\kviut-zchuyot.html\"; \"hashavat-mas.html: $\\(\\(Get-Content $hm\\).Count\\) lines\"; \"index.html: $\\(\\(Get-Content $idx\\).Count\\) lines\"; \"kviut-zchuyot.html: $\\(\\(Get-Content $kz\\).Count\\) lines\"; \"\"; \"Remaining emoji in hashavat-mas:\"; Select-String -Path $hm -Pattern '📅|🔄|👨|🎓|💝|🎖|♿|🏠|🏥' | Measure-Object | Select-Object -ExpandProperty Count; \"Remaining 2025 in hashavat-mas \\(non-factual\\):\"; \\(Select-String -Path $hm -Pattern '2025' -AllMatches\\).Matches.Count; \"2026 references in hashavat-mas:\"; \\(Select-String -Path $hm -Pattern '2026' -AllMatches\\).Matches.Count)",
+      "WebSearch",
+      "Bash(node -e \"const fs=require\\('fs'\\); const html=fs.readFileSync\\('services/hashavat-mas.html','utf8'\\); console.log\\('Lines:', html.split\\('\\\\n'\\).length\\); console.log\\('Has AccountingService:', html.includes\\('AccountingService'\\)\\); console.log\\('Has author-bio:', html.includes\\('author-bio'\\)\\); console.log\\('Has toc-link:', html.includes\\('toc-link'\\)\\); console.log\\('Has compare-table:', html.includes\\('compare-table'\\)\\); console.log\\('Military fix:', html.includes\\('שחרור מצה\\\\\"ל \\(שירות חובה / קבע\\)'\\)\\); console.log\\('Broken links fixed:', !html.includes\\('href=\\\\\"misuy-mekarkain.html\\\\\"'\\)\\); console.log\\('New title:', html.includes\\('בדיקת זכאות חינמית'\\)\\); console.log\\('aria-live calc:', html.includes\\('aria-live=\\\\\"polite\\\\\" aria-atomic=\\\\\"true\\\\\"'\\)\\); console.log\\('TOC JS:', html.includes\\('toc-active'\\)\\); console.log\\('FAQ new Q9:', html.includes\\('בשא\\\\\"מ'\\)\\); console.log\\('FAQ new Q10:', html.includes\\('השכרת דירה'\\)\\); console.log\\('Comparison section:', html.includes\\('עם רואת חשבון מול הגשה עצמאית'\\)\\);\")",
+      "Bash(New-Item -ItemType Directory -Path \"images\" -Force)",
+      "Bash(Out-Null)",
+      "Bash(Copy-Item \"תמונות אלמוג\\\\אלמוג ללא רקע .png\" \"images\\\\almog.png\")",
+      "Bash(Get-Item images\\\\almog.png)",
+      "Bash(Write-Host \"Done — $\\(Get-Item images\\\\almog.png)",
+      "PowerShell(cd \"c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\"; Copy-Item \"images\\\\אלמוג ללא רקע.jpg\" \"images\\\\almog.jpg\"; $size = \\(Get-Item \"images\\\\almog.jpg\"\\).Length; Write-Host \"Ready: $\\([Math]::Round\\($size/1KB\\)\\) KB\")",
+      "Bash(start \"C:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\\\\index.html\")"
+    ]
+  }
+}
