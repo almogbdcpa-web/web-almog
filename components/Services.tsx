@@ -98,7 +98,7 @@ function Card({
                  hover:border-[#BBA88A]/70
                  hover:-translate-y-[8px]
                  hover:shadow-[0_16px_56px_rgba(155,138,114,.18),_0_4px_16px_rgba(30,28,24,.08)]
-                 transition-all duration-300 ease-out"
+                 transition-all duration-300 ease-out cursor-default"
     >
       {/* Gradient top bar */}
       <div className="h-[4px] bg-gradient-to-l from-[#C4A882] via-[#9B8A72] to-[#7A6D5E]" />
