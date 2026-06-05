@@ -1411,31 +1411,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/sienna-accessibility/dist/sienna-accessibility.umd.js" data-position="bottom-left" async></script>
-<script>
-(function() {
-  function moveSienna() {
-    var el = document.querySelector('[id*="sienna"], [class*="sienna-btn"], [class*="sienna-widget"], [class*="sienna-trigger"], [data-sienna]');
-    if (!el) {
-      var all = document.querySelectorAll('body > *:not(script):not(style)');
-      for (var i = 0; i < all.length; i++) {
-        var s = window.getComputedStyle(all[i]);
-        if (s.position === 'fixed' && parseInt(s.left) < 100 && parseInt(s.bottom) < 150) {
-          el = all[i]; break;
-        }
-      }
-    }
-    if (el) {
-      el.style.setProperty('bottom', '7rem', 'important');
-      el.style.setProperty('left', '2rem', 'important');
-      el.style.setProperty('right', 'auto', 'important');
-    } else {
-      setTimeout(moveSienna, 300);
-    }
-  }
-  window.addEventListener('load', function() { setTimeout(moveSienna, 500); });
-})();
-</script>
+<script src="https://cdn.jsdelivr.net/npm/sienna-accessibility/dist/sienna-accessibility.umd.js" data-position="bottom-right" async></script>
 
 </body>
 </html>
