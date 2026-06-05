@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Heebo, Frank_Ruhl_Libre } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const heebo = Heebo({
@@ -27,6 +28,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="he" dir="rtl" className={`${heebo.variable} ${frankRuhl.variable}`}>
       <body className="bg-[#FAFAF8] text-[#1E1C18] antialiased font-sans">
         {children}
+
+        <Script id="sienna-widget" strategy="afterInteractive">
+          {`
+            var s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/sienna-accessibility/dist/sienna-accessibility.min.js';
+            s.onload = function() {
+              SiennaAccessibility.init({
+                lang: 'he',
+                position: 'bottom-right',
+                primaryColor: '#9B8A72',
+                statement: 'https://abd-cpa.co.il/accessibility.html'
+              });
+            };
+            document.head.appendChild(s);
+          `}
+        </Script>
       </body>
     </html>
   )

@@ -23,10 +23,11 @@ export default function Hero() {
           {/* Text — right column in RTL, bottom on mobile */}
           <div className="flex flex-col justify-center py-20 lg:py-0 lg:pe-16">
 
+            {/* Eyebrow — fades in first */}
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease, delay: 0.15 }}
+              transition={{ duration: 0.55, ease, delay: 0.1 }}
               className="flex items-center gap-3 mb-10"
             >
               <div className="w-5 h-px bg-[#9B8A72]" />
@@ -35,10 +36,11 @@ export default function Hero() {
               </span>
             </motion.div>
 
+            {/* Headline — slides in from the right */}
             <motion.h1
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.95, ease, delay: 0.25 }}
+              initial={{ opacity: 0, x: 28 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease, delay: 0.2 }}
               className="font-display font-bold text-[#1E1C18] leading-[1.08] mb-8"
               style={{ fontSize: 'clamp(2.8rem, 5.5vw, 4.6rem)' }}
             >
@@ -50,25 +52,27 @@ export default function Hero() {
             <motion.div
               initial={{ scaleX: 0, opacity: 0 }}
               animate={{ scaleX: 1, opacity: 1 }}
-              transition={{ duration: 0.9, ease, delay: 0.38 }}
+              transition={{ duration: 0.65, ease, delay: 0.42 }}
               className="h-px mb-8 w-full origin-right"
               style={{ background: 'linear-gradient(to left, #BBA88A, rgba(155,138,114,.08))' }}
             />
 
+            {/* Subheadline — fades in with slight upward motion */}
             <motion.p
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease, delay: 0.48 }}
+              transition={{ duration: 0.7, ease, delay: 0.5 }}
               className="text-[#7C7870] text-[1.05rem] leading-[1.85] mb-10 max-w-[400px] font-light"
             >
               שירות חשבונאי ומיסויי דיגיטלי מלא לעוסקים פטורים ומורשים, חברות בע״מ, עמותות ופורשים — מכל מקום בארץ.
               הנהלת חשבונות, מיסוי, החזרי מס ותכנון פרישה.
             </motion.p>
 
+            {/* CTA — appears last, sequence completes at ~1.45s */}
             <motion.div
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease, delay: 0.58 }}
+              transition={{ duration: 0.65, ease, delay: 0.72 }}
               className="flex flex-wrap items-center gap-7"
             >
               <a
@@ -95,10 +99,11 @@ export default function Hero() {
           </div>
 
           {/* Photo — left column in RTL, top on mobile */}
+          {/* clip-path wipes left→right while opacity fades in simultaneously */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, ease, delay: 0.05 }}
+            initial={{ opacity: 0, clipPath: 'inset(0 100% 0 0)' }}
+            animate={{ opacity: 1, clipPath: 'inset(0 0% 0 0)' }}
+            transition={{ duration: 1.0, ease, delay: 0 }}
             className="relative h-[68vw] lg:h-auto lg:min-h-screen"
           >
             <div className="absolute inset-0 bg-[#F0EAE2]" />
