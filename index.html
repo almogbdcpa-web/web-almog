@@ -666,29 +666,6 @@ footer { background: var(--charcoal); color: var(--muted); }
   transition: width .08s linear; pointer-events: none;
 }
 
-/* ── FLOATING ACCESSIBILITY ── */
-#a11y-float {
-  position: fixed; bottom: 7.2rem; left: 2rem; z-index: 90;
-  width: 46px; height: 46px; border-radius: 50%;
-  background: #1A6FBF; color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  border: 1.5px solid rgba(255,255,255,.2);
-  box-shadow: 0 2px 12px rgba(26,111,191,.35);
-  transition: transform .3s var(--ease), background .2s;
-  text-decoration: none;
-}
-#a11y-float:hover { transform: scale(1.1); background: #155da0; }
-#a11y-float svg { width: 22px; height: 22px; fill: currentColor; }
-#a11y-float::after {
-  content: 'הצהרת נגישות';
-  position: absolute; left: 110%; top: 50%; transform: translateY(-50%);
-  background: #1A6FBF; color: #fff;
-  font-size: 11px; font-family: var(--font-b); white-space: nowrap;
-  padding: .3rem .75rem; border-radius: 3px;
-  opacity: 0; pointer-events: none;
-  transition: opacity .2s;
-}
-#a11y-float:hover::after { opacity: 1; }
 
 /* ── FLOATING WHATSAPP ── */
 #wa-float {
@@ -1313,13 +1290,6 @@ footer { box-shadow: inset 0 14px 48px rgba(0,0,0,.3); }
 <!-- Scroll progress -->
 <div id="progress-bar"></div>
 
-<!-- Floating Accessibility -->
-<a id="a11y-float" href="accessibility.html" aria-label="הצהרת נגישות">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="3.5" r="1.8"/>
-    <path d="M17 8h-4.2L11.5 6H8v1.5h2.8l1.2 2H8.5L7 17h1.5l1-6h1v5.5h1.5V11h1l1.5 6H15l-1.5-6.5V9H17V8z"/>
-  </svg>
-</a>
 
 <!-- Floating WhatsApp -->
 <a id="wa-float" href="https://wa.me/972547312262" target="_blank" rel="noopener" aria-label="שלח הודעה ב-WhatsApp">
