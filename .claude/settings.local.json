@@ -21,7 +21,9 @@
       "Bash(Get-Item images\\\\almog.png)",
       "Bash(Write-Host \"Done — $\\(Get-Item images\\\\almog.png)",
       "PowerShell(cd \"c:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\"; Copy-Item \"images\\\\אלמוג ללא רקע.jpg\" \"images\\\\almog.jpg\"; $size = \\(Get-Item \"images\\\\almog.jpg\"\\).Length; Write-Host \"Ready: $\\([Math]::Round\\($size/1KB\\)\\) KB\")",
-      "Bash(start \"C:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\\\\index.html\")"
+      "Bash(start \"C:\\\\Users\\\\almog\\\\OneDrive\\\\Desktop\\\\almog-cpa\\\\index.html\")",
+      "Bash(git push *)",
+      "Bash(git config *)"
     ]
   }
 }
