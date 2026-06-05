@@ -69,11 +69,12 @@ img { max-width: 100%; display: block; }
   height: 68px;
 }
 .nav-logo { display: flex; align-items: center; gap: .75rem; text-decoration: none; }
-.nav-logo-text { display: flex; flex-direction: column; gap: 2px; }
-.nav-logo-text strong { font-family: var(--font-d); font-weight: 700; font-size: 1rem;
-                         color: var(--charcoal); line-height: 1; }
-.nav-logo-text em { font-style: normal; font-family: var(--font-b); font-weight: 400;
-                    font-size: .72rem; color: var(--accent); letter-spacing: .03em; line-height: 1; }
+.nav-logo-text { display: flex; flex-direction: column; gap: 3px; }
+.nav-logo-text b, .nav-logo-text s {
+  display: block;
+  font-family: var(--font-d); font-weight: 700; font-size: 1rem;
+  color: var(--charcoal); line-height: 1; font-style: normal; text-decoration: none;
+}
 .nav-links { display: flex; align-items: center; gap: 2.5rem; }
 .nav-links a { font-size: .9rem; color: var(--gray);
                transition: color .2s; }
@@ -792,7 +793,7 @@ footer { box-shadow: inset 0 14px 48px rgba(0,0,0,.3); }
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <img src="%D7%9C%D7%95%D7%92%D7%95%204.png" alt="אלמוג בן דוד - רואת חשבון" style="height:52px;width:auto;display:block;" />
-      <span class="nav-logo-text"><strong>אלמוג בן דוד</strong><em>משרד רואה חשבון</em></span>
+      <span class="nav-logo-text"><b>אלמוג בן דוד</b><s>משרד רואה חשבון</s></span>
     </a>
     <nav class="nav-links">
       <a href="#services">שירותים</a>
