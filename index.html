@@ -84,7 +84,8 @@ img { max-width: 100%; display: block; }
            transition: background .3s, color .3s; }
 .nav-cta:hover { background: var(--charcoal); color: var(--bg); }
 .hamburger { display: none; flex-direction: column; gap: 5px;
-             cursor: pointer; padding: 6px; }
+             cursor: pointer; padding: 11px; min-width: 44px; min-height: 44px;
+             align-items: center; justify-content: center; }
 .hamburger span { display: block; width: 22px; height: 1.5px;
                   background: var(--charcoal); transition: .3s; }
 .mobile-menu { display: flex; position: fixed; inset: 0; z-index: 98;
@@ -102,7 +103,7 @@ img { max-width: 100%; display: block; }
 
 /* ── HERO ── */
 #hero {
-  min-height: 100vh;
+  min-height: 100vh; min-height: 100dvh;
   background-color: var(--bg);
   background-image: radial-gradient(ellipse 70% 60% at 72% 42%, rgba(155,138,114,.11), transparent);
   display: flex; flex-direction: column; overflow: hidden;
@@ -121,12 +122,12 @@ img { max-width: 100%; display: block; }
 }
 .hero-label::before { content: ''; display: block; width: 20px; height: 1px;
                        background: var(--accent); }
-.hero-label span { font-size: 10.5px; letter-spacing: .22em; color: var(--accent);
+.hero-label span { font-size: 12px; letter-spacing: .16em; color: var(--accent);
                    text-transform: uppercase; font-weight: 500; }
 .hero-name {
   font-family: var(--font-d); font-weight: 700; color: var(--charcoal);
   line-height: 1.08; margin-bottom: 1.8rem;
-  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  font-size: clamp(2.6rem, 4.2vw, 3.6rem);
 }
 .hero-rule { height: 1px; background: linear-gradient(to left, #BBA88A, rgba(155,138,114,.08)); margin-bottom: 1.8rem; }
 .hero-desc {
@@ -181,7 +182,7 @@ img { max-width: 100%; display: block; }
 section { }
 .sec { max-width: 1200px; margin: 0 auto; padding: 6rem 2rem; }
 .sec-alt { background: var(--bg-alt); }
-.sec-label { font-size: 10.5px; letter-spacing: .22em; color: var(--accent);
+.sec-label { font-size: 12px; letter-spacing: .16em; color: var(--accent);
               text-transform: uppercase; font-weight: 500; display: block; margin-bottom: 1rem; }
 .sec-title {
   font-family: var(--font-d); font-weight: 700; color: var(--charcoal);
@@ -399,11 +400,11 @@ section { }
                     fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .btn-wa {
   display: inline-flex; align-items: center; gap: .75rem; margin-top: 2.5rem;
-  background: var(--charcoal); color: var(--bg);
+  background: #128C7E; color: #fff;
   padding: .9rem 2rem; font-size: .88rem; font-weight: 500;
-  transition: background .3s;
+  transition: background .3s, transform .25s var(--ease);
 }
-.btn-wa:hover { background: var(--dark2); }
+.btn-wa:hover { background: #0e7a6d; transform: translateY(-2px); }
 .contact-form { padding-top: 0; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .form-group { margin-bottom: 2rem; }
@@ -504,13 +505,14 @@ footer { background: var(--charcoal); color: var(--muted); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; min-height: auto; }
+  .hero-grid { grid-template-columns: 1fr; min-height: auto; padding-top: 68px; }
   .hero-text { order: 2; padding: 2rem 0 3rem; text-align: center; }
   .hero-label { justify-content: center; }
   .hero-desc { max-width: none; }
   .hero-rule { background: linear-gradient(to right, transparent, #BBA88A 50%, transparent); }
   .hero-btns { justify-content: center; }
   .hero-photo { order: 1; height: 70vw; max-height: 380px; }
+  .hero-trust { text-align: center; }
   .svc-grid { grid-template-columns: 1fr 1fr; }
   .svc-item:nth-child(3n-1),
   .svc-item:nth-child(3n) { padding-inline: .5rem; }
@@ -518,8 +520,9 @@ footer { background: var(--charcoal); color: var(--muted); }
   .svc-item:nth-child(even) { padding-inline-start: 1.5rem; }
   .svc-card-grid { grid-template-columns: repeat(2,1fr); }
   .svc-group-title { font-size: clamp(1.3rem, 4vw, 1.8rem); }
-  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .about-photo { padding: 16px; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-photo { padding: 16px; order: 1; }
+  .about-text { order: 2; }
   .process-grid { grid-template-columns: 1fr 1fr; }
   .step-item:nth-child(odd) { border-inline-end: 1px solid var(--border); padding-inline-end: 2rem; }
   .step-item:nth-child(even) { padding-inline-start: 2rem; }
@@ -532,30 +535,35 @@ footer { background: var(--charcoal); color: var(--muted); }
 }
 @media (max-width: 768px) {
   .hero-btns { flex-direction: column; align-items: center; gap: .9rem; }
-  .btn-dark { width: 100%; justify-content: center; }
+  .btn-dark { width: 100%; justify-content: center; font-size: 1rem; font-weight: 600; padding: 1rem 2rem; }
   .btn-link { width: auto; }
   .about-creds { grid-template-columns: 1fr; gap: .8rem; }
-  .footer-links { display: none; }
+  .hero-desc, .svc-desc, .pstep-desc, .about-body p, .faq-body p,
+  .contact-intro, .rev-text, .why-desc, .step-desc, .testi-text { font-weight: 400; }
+  input, select, textarea { font-size: 16px !important; }
 }
 @media (max-width: 600px) {
   .svc-grid { grid-template-columns: 1fr; }
   .svc-item { padding-inline: 0 !important; border-inline: none !important; }
   .svc-card-grid { grid-template-columns: 1fr; }
+  .svc-card-body { padding: 1.5rem 1.6rem 1.75rem; }
+  .svc-watermark { font-size: 3.5rem; }
   .why-grid { grid-template-columns: 1fr; }
   .why-item { border-inline: none !important; }
   .process-grid { grid-template-columns: 1fr; }
   .step-item { border-inline: none !important; padding-inline: 0 !important; }
   .form-row { grid-template-columns: 1fr; }
   .hero-stats { flex-direction: column; gap: 1.2rem; }
-  .sec { padding: 3.5rem 1.25rem; }
+  .sec { padding: 3rem 1.25rem; }
 }
 @media (max-width: 480px) {
   .sec { padding: 2.5rem 1rem; }
   .hero-text { padding: 1.5rem 0 2.5rem; }
   .nav-inner { padding: 0 1.25rem; }
   .footer-bar { flex-direction: column; align-items: flex-start; gap: .6rem; }
-  /* Prevent iOS zoom on form inputs */
-  input, select, textarea { font-size: 16px !important; }
+}
+@media (max-width: 400px) {
+  .hero-photo { height: 58vw; }
 }
 
 /* ── BUTTON HOVER POLISH ── */
@@ -564,6 +572,7 @@ footer { background: var(--charcoal); color: var(--muted); }
 }
 .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(30,28,24,.15); }
 .btn-link:hover  { transform: translateY(-2px); }
+.hero-trust { font-size: 11.5px; color: var(--muted); letter-spacing: .06em; margin-top: 1rem; }
 
 /* ── PROCESS STEP HOVER ── */
 .step-item { transition: background .25s; }
@@ -627,8 +636,8 @@ footer { background: var(--charcoal); color: var(--muted); }
   .pstep:last-child { border-bottom: none; }
   .pstep-ico { margin-bottom: 0; width: 46px; height: 46px; }
   .pstep-ico svg { width: 18px; height: 18px; }
-  .pstep-card { padding: 0; background: none; border: none; border-radius: 0; }
-  .pstep:hover .pstep-card { transform: none; background: none; border: none; }
+  .pstep-card { padding: 1rem 1.1rem; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.09); border-radius: 10px; }
+  .pstep:hover .pstep-card { transform: none; background: rgba(255,255,255,.08); }
 }
 
 /* ── NAV LOGO ANIMATION ── */
@@ -799,7 +808,7 @@ footer { box-shadow: inset 0 14px 48px rgba(0,0,0,.3); }
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <img src="%D7%9C%D7%95%D7%92%D7%95%204.png" alt="אלמוג בן דוד - רואת חשבון" style="height:52px;width:auto;display:block;" />
-      <span class="nav-logo-text"><b>אלמוג בן דוד</b><s>משרד רואה חשבון</s></span>
+      <span class="nav-logo-text"><b>אלמוג בן דוד</b><span>משרד רואה חשבון</span></span>
     </a>
     <nav class="nav-links">
       <a href="#services">שירותים</a>
@@ -839,6 +848,7 @@ footer { box-shadow: inset 0 14px 48px rgba(0,0,0,.3); }
         <a href="#contact" class="btn-dark">לתיאום ייעוץ ראשוני <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
         <a href="#services" class="btn-link">השירותים שלי</a>
       </div>
+      <p class="hero-trust">שיחת ייעוץ ראשונית · ללא עלות וללא התחייבות</p>
     </div>
     <div class="hero-photo r">
       <div class="bg"></div>
@@ -993,6 +1003,12 @@ footer { box-shadow: inset 0 14px 48px rgba(0,0,0,.3); }
         <p>את דרכי המקצועית התחלתי ב־EY (קוסט פורר גבאי את קסירר), שם התמקדתי בביקורת ובליווי חברות בתחומי ההייטק, הקמעונאות, התעשייה, הייצור והמסחר המקומי והבינלאומי. בהמשך כיהנתי בתפקידי חשבות בחברות ציבוריות בינלאומיות, שם העמקתי את הידע שלי בניהול פיננסי, דיווחים כספיים, בקרה ותכנון עסקי.</p>
         <p>לאחר שנים בעולם התאגידים, בחרתי להקים משרד משלי מתוך אמונה שעסקים קטנים ובינוניים זכאים לקבל את אותה רמת מקצועיות, חשיבה אסטרטגית וליווי אישי שמקבלות החברות הגדולות.</p>
         <p>החזון שלי הוא לא רק לדווח לרשויות, אלא לסייע לבעלי עסקים לקבל החלטות טובות יותר, לחסוך במס באופן חוקי, להתנהל נכון מבחינה פיננסית וליצור בסיס יציב לצמיחה לאורך זמן.</p>
+      </div>
+      <div class="about-creds">
+        <div><span class="cred-lbl">השכלה</span><span class="cred-val">כלכלה וחשבונאות, אוניברסיטת בן-גוריון</span></div>
+        <div><span class="cred-lbl">ניסיון קודם</span><span class="cred-val">EY — קוסט פורר גבאי</span></div>
+        <div><span class="cred-lbl">התמחות</span><span class="cred-val">מיסוי, חשבונאות, תכנון פרישה</span></div>
+        <div><span class="cred-lbl">שירות</span><span class="cred-val">דיגיטלי מלא · זמין לכל הארץ</span></div>
       </div>
     </div>
     <div class="about-photo r r2">
@@ -1226,13 +1242,13 @@ footer { box-shadow: inset 0 14px 48px rgba(0,0,0,.3); }
       </a>
 
       <div class="social-row">
-        <a href="https://www.facebook.com/profile.php?id=61588477094876" target="_blank" class="social-link">
+        <a href="https://www.facebook.com/profile.php?id=61588477094876" target="_blank" rel="noopener noreferrer" class="social-link">
           <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
           Facebook
         </a>
       </div>
 
-      <a href="https://wa.me/972547312262" target="_blank" class="btn-wa">
+      <a href="https://wa.me/972547312262" target="_blank" rel="noopener noreferrer" class="btn-wa">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.858L.057 23.571a.5.5 0 00.613.614l5.78-1.516A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 01-5.031-1.371l-.361-.214-3.731.979.997-3.645-.235-.374A9.861 9.861 0 012.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/></svg>
         שלח הודעה ב-WhatsApp
       </a>
@@ -1279,7 +1295,7 @@ footer { box-shadow: inset 0 14px 48px rgba(0,0,0,.3); }
       <a href="tel:+972547312262" dir="ltr">054-731-2262</a>
       <a href="mailto:almog@abd-cpa.co.il" dir="ltr">almog@abd-cpa.co.il</a>
       <div class="footer-social">
-<a href="https://www.facebook.com/profile.php?id=61588477094876" target="_blank" aria-label="Facebook">
+<a href="https://www.facebook.com/profile.php?id=61588477094876" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
         </a>
       </div>
@@ -1294,7 +1310,7 @@ footer { box-shadow: inset 0 14px 48px rgba(0,0,0,.3); }
       <span style="color:#3A3630;font-size:11px;">·</span>
       <a href="terms.html">תנאי שימוש</a>
     </nav>
-    <a href="https://wa.me/972547312262" target="_blank">לתיאום ייעוץ ← WhatsApp</a>
+    <a href="https://wa.me/972547312262" target="_blank" rel="noopener noreferrer">לתיאום ייעוץ ← WhatsApp</a>
   </div>
 </footer>
 
@@ -1303,7 +1319,7 @@ footer { box-shadow: inset 0 14px 48px rgba(0,0,0,.3); }
 
 
 <!-- Floating WhatsApp -->
-<a id="wa-float" href="https://wa.me/972547312262" target="_blank" rel="noopener" aria-label="שלח הודעה ב-WhatsApp">
+<a id="wa-float" href="https://wa.me/972547312262" target="_blank" rel="noopener noreferrer" aria-label="שלח הודעה ב-WhatsApp">
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
     <path d="M16 2C8.268 2 2 8.268 2 16c0 2.496.659 4.836 1.812 6.858L2 30l7.37-1.778A13.93 13.93 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm7.22 19.428c-.306.858-1.52 1.57-2.494 1.776-.664.14-1.53.252-4.448-.956-3.734-1.524-6.146-5.34-6.334-5.59-.18-.25-1.518-2.02-1.518-3.856s.962-2.73 1.302-3.106c.34-.376.74-.47.988-.47l.71.014c.228.01.532.086.83.638.306.564 1.04 2.538 1.13 2.724.09.186.15.402.03.648-.12.244-.18.396-.358.61-.18.21-.378.47-.538.63-.18.18-.368.374-.158.734.21.36.936 1.544 2.01 2.5 1.382 1.232 2.548 1.614 2.908 1.794.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.81-.18.33.12 2.1.99 2.46 1.17.36.18.6.27.69.42.09.15.09.87-.216 1.73z"/>
   </svg>
@@ -1328,12 +1344,14 @@ ham.addEventListener('click', () => {
   ham.classList.toggle('open', isOpen);
   ham.setAttribute('aria-expanded', isOpen);
   ham.setAttribute('aria-label', isOpen ? 'סגור תפריט' : 'פתח תפריט');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 function closeMob() {
   mob.classList.remove('open');
   ham.classList.remove('open');
   ham.setAttribute('aria-expanded', 'false');
   ham.setAttribute('aria-label', 'פתח תפריט');
+  document.body.style.overflow = '';
 }
 
 // Scroll reveal
@@ -1370,6 +1388,12 @@ window.addEventListener('scroll', () => {
   backTop.classList.toggle('visible', scrolled > 400);
 }, { passive: true });
 backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// Reviews marquee: pause on touch so users can read testimonials
+document.querySelectorAll('.reviews-track').forEach(track => {
+  track.addEventListener('touchstart', () => track.style.animationPlayState = 'paused', { passive: true });
+  track.addEventListener('touchend',   () => track.style.animationPlayState = 'running', { passive: true });
+});
 
 // Counter animation
 function animateCounter(el) {
@@ -1416,7 +1440,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     (msg ? msg + '\n' : '') +
     'טלפון: ' + phone
   );
-  window.open('https://wa.me/972547312262?text=' + text, '_blank');
+  window.location.href = 'https://wa.me/972547312262?text=' + text;
   document.getElementById('contactForm').style.display = 'none';
   document.getElementById('formSuccess').classList.add('show');
 });
